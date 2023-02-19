@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Michroma", sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+header {
+  z-index:6;
+  display: flex;
+  justify-content:space-between;
+  flex-direction: row;
+  padding-top: 5px;
+  min-height: 150px;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(44, 180, 204);
+}
+
+header ul {
+  display: flex;
+  padding-top: 60px;
+  padding-right: 200px;
+}
+
+/* Retrait pastille + espacement*/
+header li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+/* couleur de police + retait trait*/
+header a {
+  color:rgb(10, 10, 10);
+  text-decoration: none;
+}
+
+/* transition couleur sur a*/
+header a:hover {
+  color: rgb(230, 231, 233);
+  transition: 1s;
+}
+
+header .logo {
+  padding-top: 15px;
+}
+
+header .bordure {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  letter-spacing: 1px;
+  box-shadow: 0px 0px 0px 5px rgb(10, 10, 10);
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  margin: 50px;
+  text-shadow:4px 4px 0px rgba(0,0,0,0.2);
+}
+
+
+main .worldcup {
+  display: flex;
+  justify-content:center;
+  flex-direction:row;
+  align-items: center;
+  width: 100%;
+  padding-top: 30px;
+  margin-left: 20px;
+  object-fit: contain;
+ 
+}
+
+main .lieu {
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:flex-start;
+  padding-top: 30px;
+  margin-left: 10px;
+
+}
+
+main .horaire {
+
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:flex-start;
+  padding-top: 30px;
+  margin-left: 10px;
+}
+
+main {
+ overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.clignote {
+  animation: clignote 3s linear infinite;
+  transition: none;
+  color: white;
+}
+
+@keyframes clignote {
+  80% {opacity: 0;}
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding-top: 180px;
+}
+
+main img {
+  border-radius: 5px;
+}
+
+.pic-ctn {
+  width: 100vw;
+  height: 200px;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.pic-ctn {
+  position: relative;
+  width: 100vw;
+  height: 300px;
+  margin-top: 15vh;
+}
+
+.pic-ctn > img {
+  position:absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+}
+img:nth-child(3) {
+  animation-delay: 2s;
+}
+img:nth-child(4) {
+  animation-delay: 2s;
+}
+
+main .pic-ctn {
+  padding-bottom: 150px;
+}
+
+
+
+@media screen and (orientation: portrait) {
+
+  header ul {
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    display: inline;
+
+  }
+  header {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header .logo img {
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    width: 100px;
+    height:100px;
+  }
+
+  main .title {
+  width: 100%;
+  font-size: 10px; 
+  padding-left: 10px;
+  padding-top: 200px;
+}
+
+main .worldcup img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 50px;
+  margin-right: 40px;
+  
+}
+
+ section .lieu > p {
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+ }  
+
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.container {
+  background: rgb(255, 255, 255);
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 2em;
+  z-index: 5;
+}
+
+.slide-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 3em;
+  width: 40%;
+  height: 80%;
+  border-radius: 20px;
+  box-shadow: 0px 1px 2px 0px rgb(53, 53, 53);
+  overflow: hidden;
+}
+
+/*==================
+  Slides
+===================*/
+
+#slide-role {
+  background: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  z-index: 100;
+  transition: left .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  /* flex */
+  display: flex;
+}
+
+.slide {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+}
+
+/* backgrounds */
+
+.slide-1 {
+  background-image: url("https://images.pexels.com/photos/10099260/pexels-photo-10099260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+
+}
+
+.slide-2 {
+  background-image: url("https://images.pexels.com/photos/9967370/pexels-photo-9967370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+.slide-3 {
+  background-image: url("https://images.pexels.com/photos/5589885/pexels-photo-5589885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+.slide-4 {
+  background-image: url("https://images.pexels.com/photos/10030380/pexels-photo-10030380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+/*===================
+  BUTTONS
+====================*/
+
+.btn,
+.btn::after {
+  border-radius: 50%;
+  transition: all .5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.btn {
+  border: 1px solid rgba(0, 0, 0, 0.281);
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 2px 2px rgba(56, 56, 56, 0.822);
+  position: absolute;
+  bottom: 12%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transform: scale(1.1);
+  z-index: 1000;
+}
+
+.btn:nth-of-type(1) {
+  left: 38%;
+}
+
+.btn:nth-of-type(2) {
+  left: 45%;
+}
+
+.btn:nth-of-type(3) {
+  left: 52%;
+}
+
+.btn:nth-of-type(4) {
+  left: 59%;
+}
+
+.btn:hover {
+  transform: scale(1.4);
+}
+
+/* buttons Atom! */
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  border: 1px solid white;
+  background: rgb(11, 185, 238);
+  width: 20px;
+  height: 20px;
+  margin: 3px 3px;
+  transform: scale(.5, .5);
+  box-shadow: 0px 1px 5px rgba(56, 56, 56, 0.822);
+}
+
+/*====================
+      L O G I C 
+===================*/
+
+/* slide logic */
+
+input[type="radio"]:checked#slide-2-trigger~div.slide-wrapper>div#slide-role {
+  left: -100%;
+}
+
+input[type="radio"]:checked#slide-3-trigger~div.slide-wrapper>div#slide-role {
+  left: -200%;
+}
+
+input[type="radio"]:checked#slide-4-trigger~div.slide-wrapper>div#slide-role {
+  left: -300%;
+}
+
+/* button logic */
+
+input[type="radio"]:checked+label.btn {
+  transform: scale(1.2);
+  border: 1px solid rgba(53, 53, 53, 0.308);
+}
+
+input[type="radio"]:checked+label.btn::after {
+  transform: scale(1.1, 1.1);
+  background: lightskyblue;
+}
+
+/*=====================================================================================
+              MEDIA QUERIES
+=======================================================================================*/
+
+@media only screen and (max-width: 750px) {
+  .slide-wrapper {
+      width: 90%;
+      height: 100%;
+  }
+  .btn:nth-of-type(1) {
+      left: 93%;
+      bottom: 60%;
+  }
+  .btn:nth-of-type(2) {
+      left: 93%;
+      bottom: 50%;
+  }
+  .btn:nth-of-type(3) {
+      left: 93%;
+      bottom: 40%;
+  }
+  .btn:nth-of-type(4) {
+      left: 93%;
+      bottom: 30%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .btn:nth-of-type(1) {
+      left: 91%;
+  }
+  .btn:nth-of-type(2) {
+      left: 91%;
+  }
+  .btn:nth-of-type(3) {
+      left: 91%;
+  }
+  .btn:nth-of-type(4) {
+      left: 91%;
+  }
+}
+
+.container {
+ margin-top: 30px;
+ height:600px;
+}
+
+
+main > section a {
+  text-decoration: none;
+  color: black;
+  transition: 1s 
+  
+}
+
+main > section li {
+  list-style: none;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+main > section a:hover {
+  color: rgb(28, 79, 129);
+  transition: 1s;
+}
+
+footer > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  background-color: rgb(44, 180, 204);
+  color: black;
+  padding: 40px 100px;
+  width: 100%;
+}
